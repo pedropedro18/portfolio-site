@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teacher Pedro - English Teacher</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
 
     <link rel="icon" type="image/png" href="image/logo-teacher-pedro.png">
 
-<meta property="og:title" content="Teacher Pedro - English Teacher">
-<meta property="og:description" content="Ensinar com estrutura e propósito. Professor certificado, CEFR A1-C2.">
-<meta property="og:image" content="https://portfolio-site-phi-three-10.vercel.app/image/logo-teacher-pedro.png">
-<meta property="og:url" content="https://portfolio-site-phi-three-10.vercel.app/">
-<meta property="og:type" content="website">
+    <meta property="og:title" content="Teacher Pedro - English Teacher">
+    <meta property="og:description" content="Ensinar com estrutura e propósito. Professor certificado, CEFR A1-C2.">
+    <meta property="og:image" content="https://portfolio-site-phi-three-10.vercel.app/image/logo-teacher-pedro.png">
+    <meta property="og:url" content="https://portfolio-site-phi-three-10.vercel.app/">
+    <meta property="og:type" content="website">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Teacher Pedro - English Teacher">
-<meta name="twitter:description" content="Ensinar com estrutura e propósito. Professor certificado, CEFR A1-C2.">
-<meta name="twitter:image" content="https://portfolio-site-phi-three-10.vercel.app/image/logo-teacher-pedro.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Teacher Pedro - English Teacher">
+    <meta name="twitter:description" content="Ensinar com estrutura e propósito. Professor certificado, CEFR A1-C2.">
+    <meta name="twitter:image" content="https://portfolio-site-phi-three-10.vercel.app/image/logo-teacher-pedro.png">
 </head>
 <body>
     <main>
@@ -39,7 +39,7 @@
 
     <section id="inicio">
         <div class="hero-z">
-            <h1>Ensinar com estrutura e proposito</h1>
+            <h1><span id="typewriter"></span><span class="cursor-typewriter">|</span></h1>
             <span class="hero-tag">Professor certificado . CEFR A1-C2</span>
             <p>Teacher Pedro</p>
             <a href="#contacto" class="hero-cta">Marcar aula</a>
@@ -277,6 +277,22 @@
 
     iniciarSessao();
     </script>
+
+    <script>
+    const textoTyped = "Ensinar com estrutura e proposito";
+    let indiceTyped = 0;
+
+    function escrever() {
+      if (indiceTyped < textoTyped.length) {
+        document.getElementById("typewriter").textContent += textoTyped.charAt(indiceTyped);
+        indiceTyped++;
+        setTimeout(escrever, 60);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", escrever);
+    </script>
+
     <script src="java.js"></script>
 </body>
 </html>

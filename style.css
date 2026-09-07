@@ -301,4 +301,13 @@ transition: background 0.2s ease;
     margin-left: 0;
     margin-top: 70px;
   }
+  .cursor-typewriter{
+  display: inline-block;
+  animation: piscar 0.8s step-end infinite;
+  font-weight: 300;
+}
+@keyframes piscar{
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
     }
