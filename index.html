@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Teacher Pedro - English Teacher</title>
     <link rel="stylesheet" href="style.css">
 
     <link rel="icon" type="image/png" href="image/logo-teacher-pedro.png">
@@ -30,6 +30,7 @@
          <a href="#sobre">sobre</a>
          <a href="#modalidades">modalidades</a>
          <a href="#aulas">aulas</a>
+         <a href="#blog">blog</a>
          <a href="#flashcards">flashcards</a>
          <a href="#competencias">competências</a>
          <a href="#contacto">contacto</a>
@@ -121,6 +122,12 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <section id="blog">
+        <h2>Blog</h2>
+        <p class="intro-seccao">Dicas, reflexões e experiências sobre ensinar e aprender inglês.</p>
+        <div class="grelha-cards" id="blog-lista"></div>
     </section>
 
     <section id="flashcards">
@@ -291,6 +298,46 @@
     }
 
     document.addEventListener("DOMContentLoaded", escrever);
+    </script>
+
+    <script>
+    const posts = [
+      {
+        titulo: "3 erros comuns ao falar inglês",
+        data: "5 setembro 2026",
+        resumo: "Descobre os erros mais frequentes dos alunos de nível A2-B1 e como corrigi-los rapidamente.",
+        conteudo: "Um dos erros mais comuns é a confusão entre 'make' e 'do'. Em português usamos 'fazer' para quase tudo, mas em inglês há regras específicas: fazemos 'a mistake', 'a decision', mas 'homework', 'a favor'. Outro erro típico é a ordem das palavras em perguntas, e o uso incorreto dos tempos verbais para expressar hábitos versus ações em curso."
+      },
+      {
+        titulo: "Como estudar vocabulário sem esquecer",
+        data: "20 agosto 2026",
+        resumo: "A técnica de repetição espaçada (a mesma usada nos flashcards deste site) explicada de forma simples.",
+        conteudo: "Repetição espaçada significa rever uma palavra em intervalos crescentes: hoje, depois de 2 dias, depois de 4, depois de 8... Isto aproveita a forma como o cérebro consolida memória a longo prazo. É exatamente o método usado na secção Flashcards deste site."
+      }
+    ];
+
+    function renderizarBlog() {
+      const lista = document.getElementById("blog-lista");
+      lista.innerHTML = posts.map((post, i) => `
+        <div class="card">
+          <h3>${post.titulo}</h3>
+          <p class="intro-seccao" style="margin-bottom:8px;">${post.data}</p>
+          <p>${post.resumo}</p>
+          <p id="post-completo-${i}" style="display:none; margin-top:10px;">${post.conteudo}</p>
+          <button onclick="alternarPost(${i})" id="post-btn-${i}" style="margin-top:12px; background:#38bdf8; color:#fff; border:none; padding:8px 18px; border-radius:999px; cursor:pointer;">Ler mais</button>
+        </div>
+      `).join("");
+    }
+
+    function alternarPost(i) {
+      const texto = document.getElementById(`post-completo-${i}`);
+      const botao = document.getElementById(`post-btn-${i}`);
+      const aberto = texto.style.display === "block";
+      texto.style.display = aberto ? "none" : "block";
+      botao.textContent = aberto ? "Ler mais" : "Ler menos";
+    }
+
+    document.addEventListener("DOMContentLoaded", renderizarBlog);
     </script>
 
     <script src="java.js"></script>
