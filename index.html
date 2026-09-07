@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+    <header>
+       <nav class="sidebar">
+        <div class="logo">English Teacher</div>
+        <a href="#inicio">início</a>
+        <a href="#sobre">sobre</a>
+        <a href="#modalidades">modalidades</a>
+        <a href="#aulas">aulas</a>
+        <a href="#flashcards">flashcards</a>
+        <a href="#competencias">competências</a>
+        <a href="#contacto">contacto</a>
+       </nav>
+    </header>
+
+    <section id="inicio">
+        <div class="hero-z">
+            <h1>Ensinar com estrutura e proposito</h1>
+            <span class="hero-tag">Professor certificado . CEFR A1-C2</span>
+            <p>Teacher Pedro</p>
+            <a href="#contacto" class="hero-cta">Marcar aula</a>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <p class="intro-seccao"></p>
+        <h2>Sobre mim</h2>
+        <img src="image/IMG_20250529_070439_367.jpg" alt="img">
+        <p>Chamo me Pedro Tomás e ensino inglês a alunos de todas as idades e níveis, desde o primeiro contacto com a língua até a preparaçâo para exames internacionais e uso profissional avançado.</p>
+        <p>Ao logo dos anos tenho trabalhado com alunos que precisam do inglês para o dia-a-dia, para contextos académicos, para entrevistas de emprego e para exames de certificaçâo, adaptando sempre o método ao objectivo real de cada pessoa.</p>
+        <p>Alta experiência em Traduçâo em várias organizações.</p>
+    </section>
+
+    <section id="modalidades">
+        <h2>Modalidades</h2>
+        <div class="madalidade">
+            <p class="intro">Aulas adaptadas ao teu nível e aos teus objectivos, com percursos próprios para cada etapa.</p>
+            <div class="grelha-cards">
+                <div class="card">
+                    <span class="nível-tag">A1</span>
+                    <h3>Iniciaçâo</h3>
+                    <p>Vocabulário básico e primeiras estruturas gramaticais para comunicar o básico.</p>
+                </div>
+                <div class="card">
+                    <span class="nível-tag">A2</span>
+                    <h3>Elementar</h3>
+                    <p>Conversas simples sobre rotina, família e trabalho, com consolidaçâo da gramática básica e vocabulário mais amplo.</p>
+                </div>
+                <div class="card">
+                    <span class="nível-tag">B1</span>
+                    <h3>Intermédio</h3>
+                    <p>Autonomia para lidar com a maioria das situaçôes em viagem, expressar opniôes e descrever experiências e planos.</p>
+                </div>
+                <div class="card">
+                    <span class="nível-tag">B2</span>
+                    <h3>Intermédio alto</h3>
+                    <p>Interaçâo fluente e espontânia com falantes nativos, incluindo temas técnicos e discursos mais complexos.</p>
+                </div>
+                <div class="card">
+                    <span class="nível-tag">C1</span>
+                    <h3>avançado</h3>
+                    <p>domínio da língua em contextos académicos e profissionais, com precisâo e naturalidade.</p>
+                </div>
+                <div class="card">
+                    <span class="nível-tag">C2</span>
+                    <h3>Proficiência</h3>
+                    <p>Nível quase nativo, com flência total em qualquer contexto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="aulas">
+        <h2>Aulas</h2>
+        <p class="intro-seccao">Como funciona o percurso, do primeiro contacto à consolidaçâo do nível:</p>
+        <div class="lista-aulas">
+            <div class="grelha-cards">
+                <div class="card">
+                    <h3>Avaliaçâo inicial</h3>
+                    <p>Diagnóstico do nível actual e definiçâo de objectivos claros e mensuráveis.</p>
+                </div>
+                <div class="card">
+                    <h3>Plano de estudos personalizado</h3>
+                    <p>Percurso estruturado por nível CEFR, ajustado ao ritmo de cada aluno.</p>
+                </div>
+                <div class="card">
+                    <h3>Aulas regulares</h3>
+                    <p>Sessôes práticas com foco em compreensâo, expressâo oral e escrita.</p>
+                </div>
+                <div class="card">
+                    <h3>Acompanhamento contínuo</h3>
+                    <p>Revisâo periódica do progresso e ajuste do plano conforme a evoluçâo.</p>
+                </div>
+                <div class="card">
+                    <h3>Aulas por níveis CEFR</h3>
+                    <p>Ensino personalizado do A1 ao C2, adaptado ao teu ritmo e objectivos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="flashcards">
+        <h2>Flashcards</h2>
+        <p class="intro-seccao">Pratica o teu vocabulário com repetição espaçada.</p>
+        <div id="flashcards-app" style="max-width:500px;margin:0 auto;text-align:center;">
+            <div id="fc-status"></div>
+            <div id="fc-card" style="display:none;">
+                <p id="fc-palavra" style="font-size:28px;font-weight:bold;"></p>
+                <input id="fc-resposta" type="text" placeholder="Digite a tradução...">
+                <br><br>
+                <button id="fc-responder-btn" onclick="responder()">Responder</button>
+            </div>
+            <p id="fc-feedback" style="margin-top:15px;"></p>
+        </div>
+    </section>
+
+    <section id="competencias">
+        <h2>Competencias</h2>
+        <p class="intro-seccao">Àreas de especializaçâo além do ensino em sala de aula.</p>
+        <div class="grelha-cards">
+            <div class="card">
+                <h3>Ensino canadiano</h3>
+                <p>Metodologia da escola internacional Cepi maplebear, com foco em inquiry-based learning.</p>
+            </div>
+            <div class="card">
+                <h3>Traduçâo de documentos entre português e inglês</h3>
+                <p>Tradução de todo tipo de documentos, Desde documentos escolares até de carácter profissional.</p>
+            </div>
+            <div class="card">
+                <h3>Formaçâo de professores</h3>
+                <p>Formador de inglês para outros educadores, com foco em prática pedagógica.</p>
+            </div>
+            <div class="card">
+                <h3>Informática e programação</h3>
+                <p>Apoio em conteúdo técnicos de base de dados e progrmação para o ensino secundário.</p>
+            </div>
+            <div class="card">
+                <h3>Materias didáticos digitais</h3>
+                <p>Criação de ebooks e recursos de estudo personalizados para cada aluno.</p>
+            </div>
+            <div class="card">
+                <h3>Aulas de Excel</h3>
+                <p>Aulas do básico ao avançado. Desde a interface até a criação de gráficos dinámicos e dashboards</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <div>
+            <p>Fala comigo directamente para saberes mais sobre as aulas.</p>
+            <h2>Contacto: 923030010</h2>
+            <a href="https://wa.me/244923030010" class="btn-whatsapp">Falar no whatsApp</a>
+        </div>
+    </section>
+    </main>
+
+    <footer>
+        <a href="#inicio">voltar ao topo</a>
+        <p>&copy; 2026 pedro tomas - todos os direitos reservados</p>
+    </footer>
+
+    <script>
+    const vocabularioInicial = [
+      { palavra: "dog", traducao: "cachorro", acertos: 0, erros: 0, intervalo_dias: 1, proxima_revisao: hoje() },
+      { palavra: "house", traducao: "casa", acertos: 0, erros: 0, intervalo_dias: 1, proxima_revisao: hoje() },
+      { palavra: "run", traducao: "correr", acertos: 0, erros: 0, intervalo_dias: 1, proxima_revisao: hoje() },
+      { palavra: "beautiful", traducao: "bonito", acertos: 0, erros: 0, intervalo_dias: 1, proxima_revisao: hoje() },
+      { palavra: "eat", traducao: "comer", acertos: 0, erros: 0, intervalo_dias: 1, proxima_revisao: hoje() }
+    ];
+
+    function hoje() {
+      return new Date().toISOString().slice(0, 10);
+    }
+
+    function carregarDados() {
+      const salvo = localStorage.getItem("flashcards");
+      if (salvo) return JSON.parse(salvo);
+      const inicial = vocabularioInicial;
+      localStorage.setItem("flashcards", JSON.stringify(inicial));
+      return inicial;
+    }
+
+    function salvarDados(dados) {
+      localStorage.setItem("flashcards", JSON.stringify(dados));
+    }
+
+    function palavrasParaRevisar(dados) {
+      const dataHoje = hoje();
+      return dados.filter(item => item.proxima_revisao <= dataHoje);
+    }
+
+    function atualizarAcertos(dados, palavra, acertou) {
+      const item = dados.find(p => p.palavra === palavra);
+      if (!item) return dados;
+
+      if (acertou) {
+        item.acertos += 1;
+        item.intervalo_dias *= 2;
+      } else {
+        item.erros += 1;
+        item.intervalo_dias = 1;
+      }
+
+      const novaData = new Date();
+      novaData.setDate(novaData.getDate() + item.intervalo_dias);
+      item.proxima_revisao = novaData.toISOString().slice(0, 10);
+
+      salvarDados(dados);
+      return dados;
+    }
+
+    let fcDados = carregarDados();
+    let fcFila = palavrasParaRevisar(fcDados);
+    let fcAtual = null;
+
+    function iniciarSessao() {
+      if (fcFila.length === 0) {
+        document.getElementById("fc-status").innerText = "Nenhuma palavra para revisar hoje! 🎉";
+        return;
+      }
+      document.getElementById("fc-status").innerText = `${fcFila.length} palavra(s) para revisar hoje.`;
+      document.getElementById("fc-card").style.display = "block";
+      proximaPergunta();
+    }
+
+    function proximaPergunta() {
+      if (fcFila.length === 0) {
+        document.getElementById("fc-card").style.display = "none";
+        document.getElementById("fc-status").innerText = "Sessão concluída! Progresso salvo.";
+        return;
+      }
+      fcAtual = fcFila.shift();
+      document.getElementById("fc-palavra").innerText = fcAtual.palavra;
+      document.getElementById("fc-resposta").value = "";
+      document.getElementById("fc-feedback").innerText = "";
+    }
+
+    function responder() {
+      const resposta = document.getElementById("fc-resposta").value.trim().toLowerCase();
+      const correta = fcAtual.traducao.trim().toLowerCase();
+      const feedback = document.getElementById("fc-feedback");
+
+      if (resposta === correta) {
+        feedback.innerText = "✅ Correto!";
+        fcDados = atualizarAcertos(fcDados, fcAtual.palavra, true);
+      } else {
+        feedback.innerText = `❌ Errado. A resposta certa era "${fcAtual.traducao}".`;
+        fcDados = atualizarAcertos(fcDados, fcAtual.palavra, false);
+      }
+
+      setTimeout(proximaPergunta, 1200);
+    }
+
+    iniciarSessao();
+    </script>
+    <script src="java.js"></script>
+</body>
+</html>
