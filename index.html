@@ -340,6 +340,14 @@
     document.addEventListener("DOMContentLoaded", renderizarBlog);
     </script>
 
+    <script>
+    document.querySelectorAll('.nav-links-mobile a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.nav-links-mobile').classList.remove('aberto');
+      });
+    });
+    </script>
+
     <script src="java.js"></script>
 </body>
 </html>
