@@ -46,7 +46,7 @@ width: 200px;
 background-color: #0a1a3f;
 display: flex;
 flex-direction: column;
-position: 40px 20px;
+padding: 40px 20px;
 z-index: 1000;
 }
 .sidebar a{
@@ -59,8 +59,15 @@ font-weight: 500;
 color: #d4af37;
 font-weight: bold;
 }
-main, section{
-margin: 220px;
+.nav-toggle{
+display: none;
+}
+.nav-links-mobile{
+display: flex;
+flex-direction: column;
+}
+main{
+margin-left: 220px;
 }
 .nav-links li a{
 display: inline-block;
@@ -163,12 +170,12 @@ align-items: stretch;
 gap: 0;
 flex-wrap: wrap;
  }
-sobre .conteudo .texto{
+#sobre .conteudo .texto{
 flex: 1;
 min-width: 260px;
 padding: 40px;
  }
-sobre .conteudo img{
+#sobre .conteudo img{
 flex: 1;
 min-width: 260px;
 max-width: none;
@@ -226,32 +233,13 @@ text-decoration: none;
 font-weight: 600;
 background:#38bdf8;
 color: #fff;
-transition: background o.2s ease;
+transition: background 0.2s ease;
 }
 #contacto .btn-whatsapp:hover{
     background: #1da851;
     }
-.wireframe-section{
-display: grid;
-grid-template-columns: 2fr 1fr;
-grid-template-areas: 
-"sobre sobre"
-"modalidades modalidades"
-"aulas competencias"
-"contacto .";
-gap: 1.5rem;
-padding: 2rem 1rem;
-}
-.wireframe-section section{
-min-height: 300px;
-#sobre{grid-area: sobre;}
-#modalidaes{grid-area: modalidades;}
-#aulas{grid-area: aulas;}
-#competencias{grid-area: competencias;}
-#contacto{grid-area: contacto;}
-  }
 @media(max-width:768px){
-    .wireframe-sections{
+    .wireframe-section{
         grid-template-columns: 1fr;
         grid-template-areas: 
         "sobre"
@@ -261,7 +249,7 @@ min-height: 300px;
         "contacto"
         }
         }
-        @media(max-width:600px){
+@media(max-width:600px){
     .hero-z{
         grid-template-columns: 1fr;
         grid-template-areas: 
@@ -278,8 +266,39 @@ min-height: 300px;
   section{
     padding: 30px 20px;
   }
-  nav{
-    flex-direction: column;
-    align-items: flex-start;
-    }
+  .sidebar{
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+  }
+  .sidebar .logo{
+    font-size: 1.1rem;
+  }
+  .nav-toggle{
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.6rem;
+    cursor: pointer;
+  }
+  .nav-links-mobile{
+    display: none;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    width: 100%;
+    background-color: #0a1a3f;
+    padding: 10px 20px;
+  }
+  .nav-links-mobile.aberto{
+    display: flex;
+  }
+  main{
+    margin-left: 0;
+    margin-top: 70px;
+  }
     }

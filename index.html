@@ -11,13 +11,16 @@
     <header>
        <nav class="sidebar">
         <div class="logo">English Teacher</div>
-        <a href="#inicio">início</a>
-        <a href="#sobre">sobre</a>
-        <a href="#modalidades">modalidades</a>
-        <a href="#aulas">aulas</a>
-        <a href="#flashcards">flashcards</a>
-        <a href="#competencias">competências</a>
-        <a href="#contacto">contacto</a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links-mobile').classList.toggle('aberto')">☰</button>
+        <div class="nav-links-mobile">
+         <a href="#inicio">início</a>
+         <a href="#sobre">sobre</a>
+         <a href="#modalidades">modalidades</a>
+         <a href="#aulas">aulas</a>
+         <a href="#flashcards">flashcards</a>
+         <a href="#competencias">competências</a>
+         <a href="#contacto">contacto</a>
+        </div>
        </nav>
     </header>
 
@@ -45,32 +48,32 @@
             <p class="intro">Aulas adaptadas ao teu nível e aos teus objectivos, com percursos próprios para cada etapa.</p>
             <div class="grelha-cards">
                 <div class="card">
-                    <span class="nível-tag">A1</span>
+                    <span class="nivel-tag">A1</span>
                     <h3>Iniciaçâo</h3>
                     <p>Vocabulário básico e primeiras estruturas gramaticais para comunicar o básico.</p>
                 </div>
                 <div class="card">
-                    <span class="nível-tag">A2</span>
+                    <span class="nivel-tag">A2</span>
                     <h3>Elementar</h3>
                     <p>Conversas simples sobre rotina, família e trabalho, com consolidaçâo da gramática básica e vocabulário mais amplo.</p>
                 </div>
                 <div class="card">
-                    <span class="nível-tag">B1</span>
+                    <span class="nivel-tag">B1</span>
                     <h3>Intermédio</h3>
                     <p>Autonomia para lidar com a maioria das situaçôes em viagem, expressar opniôes e descrever experiências e planos.</p>
                 </div>
                 <div class="card">
-                    <span class="nível-tag">B2</span>
+                    <span class="nivel-tag">B2</span>
                     <h3>Intermédio alto</h3>
                     <p>Interaçâo fluente e espontânia com falantes nativos, incluindo temas técnicos e discursos mais complexos.</p>
                 </div>
                 <div class="card">
-                    <span class="nível-tag">C1</span>
+                    <span class="nivel-tag">C1</span>
                     <h3>avançado</h3>
                     <p>domínio da língua em contextos académicos e profissionais, com precisâo e naturalidade.</p>
                 </div>
                 <div class="card">
-                    <span class="nível-tag">C2</span>
+                    <span class="nivel-tag">C2</span>
                     <h3>Proficiência</h3>
                     <p>Nível quase nativo, com flência total em qualquer contexto.</p>
                 </div>
