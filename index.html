@@ -18,6 +18,42 @@
     <meta name="twitter:title" content="Teacher Pedro - English Teacher">
     <meta name="twitter:description" content="Ensinar com estrutura e propósito. Professor certificado, CEFR A1-C2.">
     <meta name="twitter:image" content="https://portfolio-site-phi-three-10.vercel.app/image/logo-teacher-pedro.png">
+
+    <style>
+        .form-contacto{
+            max-width: 420px;
+            margin: 32px auto 0;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .form-contacto label{
+            font-size: 0.8rem;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            font-weight: 600;
+            opacity: .8;
+        }
+        .form-contacto input,
+        .form-contacto textarea{
+            width: 100%;
+            padding: 11px 13px;
+            border-radius: 8px;
+            border: 1px solid rgba(0,0,0,.15);
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+        .form-contacto textarea{
+            min-height: 110px;
+            resize: vertical;
+        }
+        .form-contacto button{
+            border: none;
+            cursor: pointer;
+            font: inherit;
+        }
+    </style>
 </head>
 <body>
     <main>
@@ -181,6 +217,23 @@
             <p>Fala comigo directamente para saberes mais sobre as aulas.</p>
             <h2>Contacto: 923030010</h2>
             <a href="https://wa.me/244923030010" class="btn-whatsapp">Falar no whatsApp</a>
+
+            <form class="form-contacto" action="https://formsubmit.co/pedro.tomas@maplebear.edu.ao" method="POST">
+                <input type="hidden" name="_subject" value="Nova mensagem do site — Teacher Pedro">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="Nome" placeholder="O seu nome" required>
+
+                <label for="email-form">Email</label>
+                <input type="email" id="email-form" name="Email" placeholder="exemplo@email.com" required>
+
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="Mensagem" placeholder="Conte-me sobre o que precisa..." required></textarea>
+
+                <button type="submit" class="btn-whatsapp">Enviar Mensagem</button>
+            </form>
         </div>
     </section>
     </main>
