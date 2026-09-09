@@ -61,6 +61,99 @@
             cursor: pointer;
             font: inherit;
         }
+
+        /* ===== Novas ferramentas ===== */
+        .ferramenta-caixa{
+            max-width: 640px;
+            margin: 24px auto 0;
+            text-align: left;
+            background: rgba(0,0,0,.03);
+            border: 1px solid rgba(0,0,0,.08);
+            border-radius: 14px;
+            padding: 22px 24px;
+        }
+        .ferramenta-caixa label{
+            font-size: 0.8rem;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            font-weight: 600;
+            opacity: .75;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .ferramenta-caixa select,
+        .ferramenta-caixa input[type="text"],
+        .ferramenta-caixa textarea{
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(0,0,0,.15);
+            font-family: inherit;
+            font-size: 0.95rem;
+            margin-bottom: 14px;
+            background: #fff;
+        }
+        .ferramenta-caixa textarea{
+            min-height: 90px;
+            resize: vertical;
+        }
+        .btn-ferramenta{
+            border: none;
+            cursor: pointer;
+            font: inherit;
+            background: #38bdf8;
+            color: #fff;
+            padding: 10px 22px;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+        .btn-ferramenta.secundario{
+            background: transparent;
+            color: #0284c7;
+            border: 1px solid #38bdf8;
+        }
+        .btn-ferramenta:disabled{
+            opacity: .5;
+            cursor: not-allowed;
+        }
+        .resultado-caixa{
+            margin-top: 18px;
+            padding: 14px 16px;
+            border-radius: 10px;
+            background: rgba(56,189,248,.1);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .questao-exercicio{
+            margin-bottom: 18px;
+            padding-bottom: 14px;
+            border-bottom: 1px dashed rgba(0,0,0,.1);
+        }
+        .questao-exercicio p.enunciado{
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .opcoes-exercicio label{
+            display: block;
+            font-weight: 400;
+            text-transform: none;
+            letter-spacing: 0;
+            margin-bottom: 6px;
+            cursor: pointer;
+        }
+        .opcoes-exercicio input{
+            margin-right: 8px;
+        }
+        .questao-exercicio.correta{
+            background: rgba(34,197,94,.08);
+            border-radius: 8px;
+            padding: 10px;
+        }
+        .questao-exercicio.errada{
+            background: rgba(239,68,68,.08);
+            border-radius: 8px;
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
@@ -76,6 +169,8 @@
          <a href="#aulas">aulas</a>
          <a href="#blog">blog</a>
          <a href="#flashcards">flashcards</a>
+         <a href="#exercicios">exercícios</a>
+         <a href="#corretor">corretor</a>
          <a href="#competencias">competências</a>
          <a href="#contacto">contacto</a>
         </div>
@@ -186,6 +281,28 @@
                 <button id="fc-responder-btn" onclick="responder()">Responder</button>
             </div>
             <p id="fc-feedback" style="margin-top:15px;"></p>
+        </div>
+    </section>
+
+    <section id="exercicios">
+        <h2>Exercícios de gramática</h2>
+        <p class="intro-seccao">Escolhe as respostas e corrige no final para veres a tua pontuaçâo.</p>
+        <div class="ferramenta-caixa" style="max-width:700px;">
+            <div id="exercicios-lista"></div>
+            <button class="btn-ferramenta" onclick="corrigirExercicios()">Corrigir</button>
+            <button class="btn-ferramenta secundario" onclick="reiniciarExercicios()">Recomeçar</button>
+            <div id="exercicios-resultado" class="resultado-caixa" style="display:none;"></div>
+        </div>
+    </section>
+
+    <section id="corretor">
+        <h2>Corretor de frases simples</h2>
+        <p class="intro-seccao">Corretor básico: maiúsculas, pontuaçâo, espaços a mais, "a/an" e erros comuns. Nâo substitui a revisâo de um professor.</p>
+        <div class="ferramenta-caixa">
+            <label for="corretor-texto">Escreve a tua frase em inglês</label>
+            <textarea id="corretor-texto" placeholder="ex: i go to school every day and i like it"></textarea>
+            <button class="btn-ferramenta" onclick="corrigirFrase()">Corrigir</button>
+            <div id="corretor-resultado"></div>
         </div>
     </section>
 
@@ -407,6 +524,138 @@
       link.addEventListener('click', () => {
         document.querySelector('.nav-links-mobile').classList.remove('aberto');
       });
+    });
+    </script>
+
+    <script>
+    /* =========================================================
+       EXERCÍCIOS DE GRAMÁTICA
+    ========================================================= */
+    const bancoExercicios = [
+      { pergunta: "She _ to school every day.", opcoes: ["go", "goes", "going", "gone"], correta: 1 },
+      { pergunta: "They _ watching a movie right now.", opcoes: ["is", "am", "are", "be"], correta: 2 },
+      { pergunta: "I _ my homework yesterday.", opcoes: ["finish", "finished", "finishing", "finishes"], correta: 1 },
+      { pergunta: "There _ a book on the table.", opcoes: ["is", "are", "be", "am"], correta: 0 },
+      { pergunta: "He has _ his keys.", opcoes: ["lose", "lost", "losing", "loses"], correta: 1 },
+      { pergunta: "I have lived here _ 2019.", opcoes: ["for", "since", "at", "during"], correta: 1 },
+      { pergunta: "She is interested _ learning English.", opcoes: ["on", "in", "at", "for"], correta: 1 },
+      { pergunta: "This is _ interesting book.", opcoes: ["a", "an", "the", "-"], correta: 1 },
+      { pergunta: "My sister is _ than me.", opcoes: ["tall", "taller", "tallest", "more tall"], correta: 1 },
+      { pergunta: "If it rains, I _ stay home.", opcoes: ["will", "would", "am", "did"], correta: 0 }
+    ];
+
+    function renderizarExercicios() {
+      const lista = document.getElementById("exercicios-lista");
+      lista.innerHTML = bancoExercicios.map((q, i) => `
+        <div class="questao-exercicio" id="q-ex-${i}">
+          <p class="enunciado">${i + 1}. ${q.pergunta}</p>
+          <div class="opcoes-exercicio">
+            ${q.opcoes.map((op, j) => `
+              <label><input type="radio" name="ex-${i}" value="${j}"> ${op}</label>
+            `).join("")}
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function corrigirExercicios() {
+      let acertos = 0;
+      bancoExercicios.forEach((q, i) => {
+        const escolha = document.querySelector(`input[name="ex-${i}"]:checked`);
+        const caixa = document.getElementById(`q-ex-${i}`);
+        caixa.classList.remove("correta", "errada");
+        if (escolha && parseInt(escolha.value) === q.correta) {
+          acertos++;
+          caixa.classList.add("correta");
+        } else {
+          caixa.classList.add("errada");
+        }
+      });
+      const resDiv = document.getElementById("exercicios-resultado");
+      resDiv.style.display = "block";
+      resDiv.innerHTML = `Pontuaçâo: <strong>${acertos} / ${bancoExercicios.length}</strong>`;
+    }
+
+    function reiniciarExercicios() {
+      document.querySelectorAll('#exercicios-lista input[type="radio"]').forEach(r => r.checked = false);
+      document.querySelectorAll('.questao-exercicio').forEach(c => c.classList.remove("correta", "errada"));
+      document.getElementById("exercicios-resultado").style.display = "none";
+    }
+
+    /* =========================================================
+       CORRETOR DE FRASES SIMPLES
+    ========================================================= */
+    const correcoesComuns = {
+      "dont": "don't", "cant": "can't", "wont": "won't", "im": "I'm",
+      "ive": "I've", "youre": "you're", "theyre": "they're", "isnt": "isn't",
+      "arent": "aren't", "wasnt": "wasn't", "werent": "weren't", "didnt": "didn't",
+      "doesnt": "doesn't", "hasnt": "hasn't", "havent": "haven't", "id": "I'd",
+      "ill": "I'll", "whats": "what's", "thats": "that's"
+    };
+
+    function corrigirFrase() {
+      const original = document.getElementById("corretor-texto").value;
+      const resultadoDiv = document.getElementById("corretor-resultado");
+
+      if (!original.trim()) {
+        resultadoDiv.innerHTML = <div class="resultado-caixa">Escreve uma frase primeiro.</div>;
+        return;
+      }
+
+      let alteracoes = [];
+      let texto = original.trim().replace(/\s+/g, " ");
+      if (texto !== original.trim()) alteracoes.push("espaços a mais removidos");
+
+      // pronome "i" isolado -> "I"
+      const antesPronome = texto;
+      texto = texto.replace(/\bi\b/g, "I");
+      if (texto !== antesPronome) alteracoes.push('"i" corrigido para "I"');
+
+      // contrações comuns
+      texto = texto.replace(/\b([a-zA-Z']+)\b/g, (match) => {
+        const chave = match.toLowerCase();
+        if (correcoesComuns[chave]) {
+          alteracoes.push(`"${match}" → "${correcoesComuns[chave]}"`);
+          return correcoesComuns[chave];
+        }
+        return match;
+      });
+
+      // a/an básico (pela letra seguinte, nâo pelo som — limitaçâo conhecida)
+      texto = texto.replace(/\b([Aa])\s+([aeiouAEIOU]\w*)/g, (m, artigo, palavra) => {
+        alteracoes.push(`"a ${palavra}" → "an ${palavra}"`);
+        return `${artigo}n ${palavra}`;
+      });
+      texto = texto.replace(/\b([Aa]n)\s+([^aeiouAEIOU\s]\w*)/g, (m, artigo, palavra) => {
+        alteracoes.push(`"an ${palavra}" → "a ${palavra}"`);
+        return `${artigo.slice(0, 1)} ${palavra}`;
+      });
+
+      // maiúscula inicial
+      if (texto.length > 0 && texto[0] !== texto[0].toUpperCase()) {
+        texto = texto[0].toUpperCase() + texto.slice(1);
+        alteracoes.push("primeira letra maiúscula");
+      }
+
+      // pontuaçâo final
+      if (!/[.!?]$/.test(texto)) {
+        texto += ".";
+        alteracoes.push("ponto final adicionado");
+      }
+
+      alteracoes = [...new Set(alteracoes)];
+
+      resultadoDiv.innerHTML = `
+        <div class="resultado-caixa">
+          <strong>Frase corrigida:</strong><br>${texto}
+          ${alteracoes.length ? `<br><br><strong>Alteraçôes:</strong><ul style="margin:6px 0 0 18px;">${alteracoes.map(a => `<li>${a}</li>`).join("")}</ul>` : `<br><br>Nenhuma alteraçâo necessária pelas regras básicas deste corretor.`}
+          <p style="font-size:0.8rem; opacity:.7; margin-top:10px;">Corretor baseado em regras simples (nâo verifica gramática complexa nem sentido da frase).</p>
+        </div>
+      `;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderizarExercicios();
     });
     </script>
 
