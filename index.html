@@ -531,18 +531,92 @@
     /* =========================================================
        EXERCÍCIOS DE GRAMÁTICA
     ========================================================= */
-    const bancoExercicios = [
-      { pergunta: "She _ to school every day.", opcoes: ["go", "goes", "going", "gone"], correta: 1 },
-      { pergunta: "They _ watching a movie right now.", opcoes: ["is", "am", "are", "be"], correta: 2 },
-      { pergunta: "I _ my homework yesterday.", opcoes: ["finish", "finished", "finishing", "finishes"], correta: 1 },
-      { pergunta: "There _ a book on the table.", opcoes: ["is", "are", "be", "am"], correta: 0 },
-      { pergunta: "He has _ his keys.", opcoes: ["lose", "lost", "losing", "loses"], correta: 1 },
-      { pergunta: "I have lived here _ 2019.", opcoes: ["for", "since", "at", "during"], correta: 1 },
-      { pergunta: "She is interested _ learning English.", opcoes: ["on", "in", "at", "for"], correta: 1 },
-      { pergunta: "This is _ interesting book.", opcoes: ["a", "an", "the", "-"], correta: 1 },
-      { pergunta: "My sister is _ than me.", opcoes: ["tall", "taller", "tallest", "more tall"], correta: 1 },
-      { pergunta: "If it rains, I _ stay home.", opcoes: ["will", "would", "am", "did"], correta: 0 }
-    ];
+  const bancoExerciciosPorNivel = {
+  A1: [
+    { pergunta: "I _ a student.", opcoes: ["is", "am", "are", "be"], correta: 1 },
+    { pergunta: "She _ from Portugal.", opcoes: ["is", "am", "are", "be"], correta: 0 },
+    { pergunta: "This is _ apple.", opcoes: ["a", "an", "the", "-"], correta: 1 },
+    { pergunta: "They _ two brothers.", opcoes: ["has", "have", "having", "haves"], correta: 1 },
+    { pergunta: "_ you like coffee?", opcoes: ["Is", "Are", "Do", "Does"], correta: 2 },
+    { pergunta: "There _ a cat under the table.", opcoes: ["is", "are", "am", "be"], correta: 0 },
+    { pergunta: "My name _ Ana.", opcoes: ["is", "am", "are", "be"], correta: 0 },
+    { pergunta: "_ is your name?", opcoes: ["What", "Who", "Where", "When"], correta: 0 },
+    { pergunta: "I have _ orange.", opcoes: ["a", "an", "the", "-"], correta: 1 },
+    { pergunta: "He _ a teacher.", opcoes: ["is", "am", "are", "be"], correta: 0 },
+    { pergunta: "We _ happy.", opcoes: ["is", "am", "are", "be"], correta: 2 },
+    { pergunta: "Look! It _ raining.", opcoes: ["is", "am", "are", "be"], correta: 0 }
+  ],
+  A2: [
+    { pergunta: "She _ to school every day.", opcoes: ["go", "goes", "going", "gone"], correta: 1 },
+    { pergunta: "I _ my homework yesterday.", opcoes: ["finish", "finished", "finishing", "finishes"], correta: 1 },
+    { pergunta: "He _ TV when I called him.", opcoes: ["watch", "watched", "was watching", "watches"], correta: 2 },
+    { pergunta: "My sister is _ than me.", opcoes: ["tall", "taller", "tallest", "more tall"], correta: 1 },
+    { pergunta: "We are going to _ a party tomorrow.", opcoes: ["have", "has", "having", "had"], correta: 0 },
+    { pergunta: "I _ never been to London.", opcoes: ["am", "have", "has", "did"], correta: 1 },
+    { pergunta: "Yesterday, I _ to the cinema.", opcoes: ["go", "went", "gone", "goes"], correta: 1 },
+    { pergunta: "She can _ French very well.", opcoes: ["speak", "speaks", "speaking", "spoke"], correta: 0 },
+    { pergunta: "There _ many people at the party.", opcoes: ["was", "were", "is", "be"], correta: 1 },
+    { pergunta: "I _ playing football when it started to rain.", opcoes: ["was", "were", "am", "is"], correta: 0 },
+    { pergunta: "He is the _ student in the class.", opcoes: ["good", "better", "best", "goodest"], correta: 2 },
+    { pergunta: "Have you ever _ to Paris?", opcoes: ["be", "been", "being", "was"], correta: 1 }
+  ],
+  B1: [
+    { pergunta: "They _ watching a movie right now.", opcoes: ["is", "am", "are", "be"], correta: 2 },
+    { pergunta: "He has _ his keys.", opcoes: ["lose", "lost", "losing", "loses"], correta: 1 },
+    { pergunta: "I have lived here _ 2019.", opcoes: ["for", "since", "at", "during"], correta: 1 },
+    { pergunta: "If it rains, I _ stay home.", opcoes: ["will", "would", "am", "did"], correta: 0 },
+    { pergunta: "She is interested _ learning English.", opcoes: ["on", "in", "at", "for"], correta: 1 },
+    { pergunta: "By the time we arrived, the film _ already started.", opcoes: ["has", "had", "have", "was"], correta: 1 },
+    { pergunta: "I used to _ football when I was young.", opcoes: ["play", "played", "playing", "plays"], correta: 0 },
+    { pergunta: "This house was built _ 1990.", opcoes: ["in", "on", "at", "since"], correta: 0 },
+    { pergunta: "She told me she _ tired.", opcoes: ["is", "was", "be", "been"], correta: 1 },
+    { pergunta: "You _ study harder if you want to pass.", opcoes: ["should", "must", "would", "might"], correta: 0 },
+    { pergunta: "I'm looking forward _ you soon.", opcoes: ["to see", "seeing", "to seeing", "see"], correta: 2 },
+    { pergunta: "The book, _ I bought last week, is great.", opcoes: ["who", "which", "whose", "what"], correta: 1 }
+  ],
+  B2: [
+    { pergunta: "If I _ more time, I would travel more.", opcoes: ["have", "had", "has", "having"], correta: 1 },
+    { pergunta: "The report _ by tomorrow morning.", opcoes: ["will finish", "will be finished", "finishes", "is finishing"], correta: 1 },
+    { pergunta: "She suggested _ to the meeting earlier.", opcoes: ["to come", "coming", "come", "came"], correta: 1 },
+    { pergunta: "I wish I _ how to swim.", opcoes: ["know", "knew", "known", "have known"], correta: 1 },
+    { pergunta: "Hardly _ arrived when the phone rang.", opcoes: ["I had", "had I", "I have", "have I"], correta: 1 },
+    { pergunta: "He denied _ the money.", opcoes: ["to take", "taking", "take", "took"], correta: 1 },
+    { pergunta: "By next year, I _ here for ten years.", opcoes: ["will work", "will have worked", "work", "worked"], correta: 1 },
+    { pergunta: "I'd rather you _ smoke here.", opcoes: ["don't", "didn't", "not", "won't"], correta: 1 },
+    { pergunta: "It's about time you _ a job.", opcoes: ["get", "got", "getting", "will get"], correta: 1 },
+    { pergunta: "She acted _ nothing had happened.", opcoes: ["as if", "if", "that", "when"], correta: 0 },
+    { pergunta: "Under no circumstances _ allowed to leave.", opcoes: ["you are", "are you", "you're", "you will"], correta: 1 },
+    { pergunta: "I can't help _ about her.", opcoes: ["think", "thinking", "to think", "thought"], correta: 1 }
+  ],
+  C1: [
+    { pergunta: "Not only _ late, but he also forgot the documents.", opcoes: ["he was", "was he", "he is", "is he"], correta: 1 },
+    { pergunta: "It's high time we _ a decision.", opcoes: ["make", "made", "will make", "making"], correta: 1 },
+    { pergunta: "She would rather I _ tomorrow.", opcoes: ["leave", "left", "will leave", "leaving"], correta: 1 },
+    { pergunta: "Were it not _ your help, we would have failed.", opcoes: ["for", "to", "with", "of"], correta: 0 },
+    { pergunta: "The proposal, _ was rejected, took months to prepare.", opcoes: ["that", "which", "who", "what"], correta: 1 },
+    { pergunta: "No sooner _ the door than the phone rang.", opcoes: ["he closed", "did he close", "he had closed", "had he closed"], correta: 1 },
+    { pergunta: "Such _ his anger that he couldn't speak.", opcoes: ["was", "is", "were", "be"], correta: 0 },
+    { pergunta: "Little _ that she was being watched.", opcoes: ["she knew", "did she know", "she did know", "knew she"], correta: 1 },
+    { pergunta: "He behaves as if he _ the boss.", opcoes: ["is", "was", "were", "be"], correta: 2 },
+    { pergunta: "I'd sooner you _ me the truth.", opcoes: ["tell", "told", "will tell", "telling"], correta: 1 },
+    { pergunta: "On no account _ this door unlocked.", opcoes: ["leave", "should you leave", "you should leave", "you leave"], correta: 1 },
+    { pergunta: "I would sooner resign _ act against my principles.", opcoes: ["than", "that", "from", "to"], correta: 0 }
+  ],
+  C2: [
+    { pergunta: "Scarcely _ the presentation ended when questions erupted.", opcoes: ["had", "did", "was", "has"], correta: 0 },
+    { pergunta: "Had it not been for her intervention, the project _ collapsed.", opcoes: ["would", "would have", "will have", "had"], correta: 1 },
+    { pergunta: "The committee's decision, _ controversial, was ultimately upheld.", opcoes: ["albeit", "despite", "although", "even"], correta: 0 },
+    { pergunta: "So absorbed _ he in his work that he missed the call.", opcoes: ["was", "did", "he was", "had"], correta: 0 },
+    { pergunta: "Rarely _ such dedication in someone so young.", opcoes: ["one sees", "does one see", "one does see", "sees one"], correta: 1 },
+    { pergunta: "The findings, far _ conclusive, warrant further study.", opcoes: ["from being", "of being", "to being", "as being"], correta: 0 },
+    { pergunta: "Little did she realize _ trouble she was in.", opcoes: ["what", "how much", "that", "which"], correta: 1 },
+    { pergunta: "Not until the results were announced _ the truth.", opcoes: ["did we know", "we knew", "we did know", "knew we"], correta: 0 },
+    { pergunta: "So sudden was the change _ nobody was prepared.", opcoes: ["that", "which", "as", "so"], correta: 0 },
+    { pergunta: "Never before _ such an achievement possible.", opcoes: ["was", "has been", "had been", "did"], correta: 0 },
+    { pergunta: "Only when the lights went out _ how serious the situation was.", opcoes: ["we realized", "did we realize", "we did realize", "realized we"], correta: 1 },
+    { pergunta: "Seldom _ a debut so widely acclaimed.", opcoes: ["has there been", "there has been", "there was", "was there"], correta: 0 }
+  ]
+};
 
     function renderizarExercicios() {
       const lista = document.getElementById("exercicios-lista");
